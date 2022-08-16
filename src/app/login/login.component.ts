@@ -7,10 +7,12 @@ import {
   ValidationErrors,
   Validators,
 } from '@angular/forms';
+import { AuthenticationService } from '../services/authentication.service';
+
 /**
  * Modify the login component and the login template to collect login details and add the validators as necessary
  */
-import { AuthenticationService } from '../services/authentication.service';
+
 
 @Component({
   templateUrl: 'login.component.html',

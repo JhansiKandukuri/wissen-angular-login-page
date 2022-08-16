@@ -16,11 +16,11 @@
             formControlName="email"
             type="email"
           />
-          <div *ngIf= "email.invalid && (email.dirty || email.touched)">
-            <div *ngIf= "email.errors?.required" class="error-label">
+          <div *ngIf="email.invalid && (email.dirty || email.touched)">
+            <div *ngIf="email.errors?.required" class="error-label">
               Email is Required
             </div>
-            <div *ngIf= "email.errors?.email" class="error-label">
+            <div *ngIf="email.errors?.email" class="error-label">
               Please provide valid email id
             </div>
           </div>
@@ -34,25 +34,25 @@
             <input
               class="form-control"
               id="password"
-              [type]="show?'password':'text'"
+              [type]="show ? 'password' : 'text'"
               formControlName="password"
             />
             <span class="position-absolute bottom-0 end-0 translate-middle">
               <img
-                [src]="show ? SlashEyeIcon:eyeIcon"
+                [src]="show ? SlashEyeIcon : eyeIcon"
                 class="float-end"
                 width="20"
                 height="20"
                 alt=""
-                (click)='show = !show'
+                (click)="show = !show"
             /></span>
           </div>
 
-          <div *ngIf= "password.invalid && (password.dirty || password.touched)">
-            <div *ngIf= "password.errors?.required" class="error-label">
+          <div *ngIf="password.invalid && (password.dirty || password.touched)">
+            <div *ngIf="password.errors?.required" class="error-label">
               Password is Required
             </div>
-            <div *ngIf= "password.errors?.invalidPassword" class="error-label">
+            <div *ngIf="password.errors?.invalidPassword" class="error-label">
               Please provide minimum 6 charactor which should include 1
               Uppercase 1 lowercase and 1 digit
             </div>
@@ -76,13 +76,13 @@
             >
           </label>
           <div
-            *ngIf= "
+            *ngIf="
               conditioncheck.invalid &&
               (conditioncheck.dirty || conditioncheck.touched)
             "
           >
             <div
-              *ngIf= "conditioncheck.errors?.checkRequired"
+              *ngIf="conditioncheck.errors?.checkRequired"
               class="error-label"
             >
               Please select by clicking the checkbox
@@ -91,7 +91,7 @@
         </div>
         <button
           class="w-100 btn btn-primary btn-lg submit-btn-color"
-          [disabled]= "!loginForm.valid"
+          [disabled]="!loginForm.valid"
         >
           Next
         </button>
