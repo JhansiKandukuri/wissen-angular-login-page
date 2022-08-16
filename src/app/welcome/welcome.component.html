@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="mb-2">
+    <h3 class="h6 mt-1 mb-4">Welcome to Wissen Coding Challenge!</h3>
+    <button class="btn btn btn-link" (click)="logout()">Logout</button>
+  </div>
+
+  <div *ngIf="!user">{{ LoadingData }}</div>
+
+  <div *ngIf="user">
+    <ul class="list-group">
+      <li
+        *ngFor="let data of user"
+        class="list-group-item justify-content-between align-items-center"
+      >
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1" [style.background]="data.color">
+            {{ data.name }}
+          </h5>
+
+          <small>year: {{ data.year }}</small>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
